@@ -119,7 +119,7 @@ class AddressController extends Controller
         $country=strtoupper($country);
         //$province=$province);
 
-        $response=$client->get('address_getLocality',
+        $response=$client->get('address_getLocality1',
             ['query'=>[
                 'country'=>$country,
                 'province'=>$province,
