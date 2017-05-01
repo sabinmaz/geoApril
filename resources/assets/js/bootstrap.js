@@ -7,12 +7,30 @@ window._ = require('lodash');
  * code may be modified to fit the specific needs of your application.
  */
 
-try {
-    window.$ = window.jQuery = require('jquery');
+window.$ = window.jQuery = require('jquery');
 
-    require('bootstrap-sass');
-} catch (e) {}
+require('bootstrap-sass');
 
+/**
+ * Vue is a modern JavaScript library for building interactive web interfaces
+ * using reactive data binding and reusable components. Vue's API is clean
+ * and simple, leaving you to focus on building your next great project.
+ */
+import Vue from 'vue';
+import VueRouter from 'vue-router';
+//import BootstrapVue from './components/bootstrap-vue/dist/bootstrap-vue';
+//import {ServerTable, ClientTable, Event} from 'vue-tables-2';
+var Lang = require('vuejs-localization');
+//import Grid from 'vue2-bootstrap-table';
+//Notice that you need to specify the lang folder, in this case './lang'
+Lang.requireAll(require.context('./lang', true, /\.js$/));
+
+window.Vue = Vue;
+Vue.use(VueRouter);
+Vue.use(Lang);
+//Vue.use(BootstrapVue);
+//Vue.use(Grid);
+//require('./bootstrap-table');
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
  * to our Laravel back-end. This library automatically handles sending the
@@ -21,8 +39,10 @@ try {
 
 window.axios = require('axios');
 
-window.axios.defaults.headers.common['X-CSRF-TOKEN'] = window.Laravel.csrfToken;
-window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+window.axios.defaults.headers.common = {
+    //  'X-CSRF-TOKEN': window.Laravel.csrfToken,
+    'X-Requested-With': 'XMLHttpRequest'
+};
 
 /**
  * Echo exposes an expressive API for subscribing to channels and listening
