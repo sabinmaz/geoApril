@@ -5,7 +5,7 @@
 
         <div class="col-md-12">
 
-          <!--<img src="/images/logo.png" width="80px" class="pull-left" style="margin:5px" />-->
+          <img src="/images/geo-logo.png" width="80px" class="pull-left" style="margin:5px" />
           <p class="logo">UMVA GEO
                         <span style="font-size:18px;">
                           {{$route.params['country']}}
@@ -29,6 +29,10 @@
         <div class="row">
           <div class="col-md-8">
             <ol class="breadcrumb">
+              <router-link tag="li" to="/" exact><a class="text-uppercase"><span class="glyphicon glyphicon-home"></span></a></router-link>
+              <router-link tag="li" v-for="(param,index) in $route.params" :key="index" :to="{name: index}">
+               <a class="text-uppercase">{{param}}</a>
+              </router-link>
              <!--<router-link tag="li" to='/' exact><a>Home</a></router-link>-->
               <!--{{path=''}}-->
                 <!--<router-link tag="li"  v-for="param in $route.params" :to="{path: path=path+'/'+param}" ><a>{{param}}</a></router-link>-->
@@ -37,12 +41,16 @@
             </ol>
           </div>
           <div class="col-md-4">
-            <form class="form-horizontal">
+            <form class="form-horizontal pull-right">
               <div class="form-inline">
-                <label class="control-label col-md-4">{{this.$lang.messages['Language']}}</label>
-                <select v-on:change="changeLang()" v-model="language" class="form-control">
+                <label class="control-label label-white">{{this.$lang.messages['Language']}} :</label>
+                <select v-on:change="changeLang()" v-model="language" class="form-control btn btn-primary">
                   <option value="en">English</option>
                   <option value="fr">French</option>
+                  <option value="nl">Dutch</option>
+                  <option value="es">Spanish</option>
+                  <option value="np">Nepali</option>
+                  <option value="rn">Kirundi</option>
                 </select>
               </div>
             </form>

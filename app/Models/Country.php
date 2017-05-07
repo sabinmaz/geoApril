@@ -20,7 +20,7 @@ class Country extends Model  {
      *
      * @var array
      */
-    protected $fillable = ['iso2', 'iso3', 'iso_number', 'country_name', 'date_format', 'country_code', 'latitude', 'longitude', 'capital', 'area', 'population', 'gdp', 'tld'];
+    protected $fillable = ['iso2', 'iso3', 'iso_number', 'country_name', 'date_format', 'country_code', 'latitude', 'longitude', 'capital', 'area', 'population', 'gdp', 'tld','currency'];
 
     /**
      * The attributes excluded from the model's JSON form.

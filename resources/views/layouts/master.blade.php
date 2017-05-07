@@ -64,7 +64,7 @@
             }
         </style>
     </head>
-    <body>
+    <body class="umva-theme">
 
 @yield('content')
     <script type="text/javascript" src="/js/app.js"></script>

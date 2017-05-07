@@ -4,7 +4,10 @@
 
         <heading></heading>
         {{--<div class="flex-center position-ref full-height">--}}
-        <router-view></router-view>
+        <div class="container">
+            <router-view></router-view>
+        </div>
+
         {{--</div>--}}
     </div>
 @endsection

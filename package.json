@@ -19,6 +19,7 @@
     "vue": "^2.1.10"
   },
   "dependencies": {
-    "vue-router": "^2.5.2"
+    "vue-router": "^2.5.2",
+    "vue-google-maps": "https://github.com/Kofre/vue-google-maps/archive/v1.1.0.tar.gz"
   }
 }

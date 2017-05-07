@@ -21,6 +21,7 @@ Vue.component('heading', require('./components/Header.vue'));
 //Vue.component('ctable', require('./components/comp/table.vue'));
 const app = new Vue({
     el: '#app',
-    router: router
+    router: router,
+
 
 });
